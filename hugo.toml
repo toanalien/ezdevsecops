@@ -1,0 +1,80 @@
+baseURL = "https://ezdevsecops.github.io/ezdevsecops/"
+languageCode = "vi"
+title = "EZ DevSecOps"
+theme = "hugo-PaperMod"
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+# baseURL placeholder - update when custom domain decided
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
+
+[params]
+  env = "production"
+  description = "DevSecOps tutorials, Kubernetes security, CI/CD pipelines"
+  author = "EZ DevSecOps"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = true
+
+  [params.homeInfoParams]
+    Title = "EZ DevSecOps"
+    Content = "Hướng dẫn DevSecOps, bảo mật Kubernetes, CI/CD pipelines"
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/ezdevsecops"
+
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    keys = ["title", "permalink", "summary", "content"]
+
+[markup.highlight]
+  codeFences = true
+  guessSyntax = true
+  lineNos = true
+  style = "monokai"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[[menu.main]]
+  name = "Trang chủ"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "Bài viết"
+  url = "/posts/"
+  weight = 2
+
+[[menu.main]]
+  name = "Series"
+  url = "/series/"
+  weight = 3
+
+[[menu.main]]
+  name = "Tags"
+  url = "/tags/"
+  weight = 4
+
+[[menu.main]]
+  name = "Tìm kiếm"
+  url = "/search/"
+  weight = 5

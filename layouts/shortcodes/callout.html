@@ -1,0 +1,7 @@
+{{ $type := .Get "type" | default "info" }}
+{{ $titles := dict "info" "Thông tin" "warning" "Cảnh báo" "danger" "Nguy hiểm" "tip" "Mẹo" }}
+{{ $title := index $titles $type | default ($type | title) }}
+<div class="callout callout-{{ $type }}">
+  <div class="callout-title">{{ $title }}</div>
+  <div class="callout-content">{{ .Inner | markdownify }}</div>
+</div>
