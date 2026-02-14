@@ -827,7 +827,7 @@ trivy image registry.digitalocean.com/myregistry/myapp:v1.0
 
 **Output mẫu:**
 
-```
+```text
 nginx:1.25-alpine (alpine 3.18.4)
 ===================================
 Total: 2 (CRITICAL: 1, HIGH: 1, MEDIUM: 0, LOW: 0)

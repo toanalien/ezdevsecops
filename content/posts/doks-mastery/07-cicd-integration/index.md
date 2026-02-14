@@ -1258,7 +1258,7 @@ kubectl get pod <pod-name> -n production -o yaml | grep -A 10 readinessProbe
 
 **Symptom**:
 
-```
+```text
 Error: failed to download vulnerability DB: GET https://github.com/aquasecurity/trivy-db/releases/download/db/trivy.db: 403 rate limit exceeded
 ```
 
@@ -1279,7 +1279,7 @@ Error: failed to download vulnerability DB: GET https://github.com/aquasecurity/
 
 **Symptom**:
 
-```
+```text
 Error: failed to get OIDC token: unable to get OIDC token: audience not allowed
 ```
 

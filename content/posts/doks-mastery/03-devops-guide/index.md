@@ -219,7 +219,7 @@ k8s_version  = "1.28.2-do.0"
 
 {{< callout type="warning" >}}
 **Bảo mật Token**: Không commit file `terraform.tfvars` vào Git. Thêm vào `.gitignore`:
-```
+```text
 terraform.tfvars
 *.tfstate
 *.tfstate.backup
@@ -803,7 +803,7 @@ Kustomize cho phép customize YAML manifests mà không cần templating.
 
 **Directory Structure**:
 
-```
+```text
 k8s-manifests/
 ├── base/
 │   ├── kustomization.yaml

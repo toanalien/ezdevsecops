@@ -623,7 +623,7 @@ graph TB
 
 {{< callout type="tip" >}}
 **DNS Configuration**: Sau khi có Ingress Controller external IP, cấu hình DNS A record:
-```
+```text
 app.example.com     A    157.230.x.x
 api.example.com     A    157.230.x.x
 *.example.com       A    157.230.x.x (wildcard)

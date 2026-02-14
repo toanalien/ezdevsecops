@@ -269,7 +269,7 @@ doctl version
 
 Kết quả mong đợi:
 
-```
+```text
 doctl version 1.104.0-release
 Git commit hash: a1b2c3d4
 ```
@@ -284,7 +284,7 @@ doctl auth init
 
 Khi được hỏi, paste API token bạn đã tạo ở Bước 1:
 
-```
+```text
 Please authenticate doctl for use with your DigitalOcean account. You can generate a token in the control panel at https://cloud.digitalocean.com/account/api/tokens
 
 Enter your access token: dop_v1_abc123xyz456...
@@ -306,7 +306,7 @@ doctl account get
 
 Kết quả mong đợi:
 
-```
+```text
 Email                    Droplet Limit    Email Verified    UUID                                      Status
 your-email@example.com   25               true              abc12345-6789-0def-ghij-klmnopqrstuv    active
 ```
@@ -469,7 +469,7 @@ doctl kubernetes cluster create doks-mastery \
 4. Deploy core add-ons (CoreDNS, kube-proxy, DigitalOcean CSI driver)
 
 Bạn sẽ thấy output tương tự:
-```
+```text
 Notice: Cluster is provisioning, waiting for cluster to be running
 ..................................
 Notice: Cluster created, fetching credentials
@@ -543,7 +543,7 @@ doctl kubernetes cluster kubeconfig save doks-mastery
 
 Output:
 
-```
+```text
 Notice: Adding cluster credentials to kubeconfig file found in "/home/user/.kube/config"
 Notice: Setting current-context to do-sgp1-doks-mastery
 ```
@@ -577,7 +577,7 @@ kubectl config current-context
 
 Output:
 
-```
+```text
 do-sgp1-doks-mastery
 ```
 
@@ -634,7 +634,7 @@ kubectl cluster-info
 
 Output:
 
-```
+```text
 Kubernetes control plane is running at https://abc12345-6789-0def-ghij-klmnopqrstuv.k8s.ondigitalocean.com
 CoreDNS is running at https://abc12345-6789-0def-ghij-klmnopqrstuv.k8s.ondigitalocean.com/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 
@@ -653,7 +653,7 @@ kubectl get nodes
 
 Output:
 
-```
+```text
 NAME                       STATUS   ROLES    AGE     VERSION
 worker-pool-abc1           Ready    <none>   5m30s   v1.29.1
 worker-pool-abc2           Ready    <none>   5m28s   v1.29.1
@@ -700,7 +700,7 @@ kubectl get namespaces
 
 Output:
 
-```
+```text
 NAME              STATUS   AGE
 default           Active   6m
 kube-node-lease   Active   6m
@@ -760,7 +760,7 @@ kubectl get pods -A
 
 Output:
 
-```
+```text
 NAMESPACE     NAME                                       READY   STATUS    RESTARTS   AGE
 kube-system   cilium-4vt8n                               1/1     Running   0          10m
 kube-system   cilium-g9xqw                               1/1     Running   0          10m
@@ -827,7 +827,7 @@ kubectl top nodes
 
 Output:
 
-```
+```text
 NAME               CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%
 worker-pool-abc1   89m          4%     945Mi           48%
 worker-pool-abc2   76m          3%     892Mi           45%
@@ -840,7 +840,7 @@ kubectl top pods -A
 
 Output:
 
-```
+```text
 NAMESPACE     NAME                                       CPU(cores)   MEMORY(bytes)
 kube-system   cilium-4vt8n                               12m          142Mi
 kube-system   cilium-g9xqw                               10m          138Mi

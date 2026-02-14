@@ -408,7 +408,7 @@ kubectl describe resourcequota dev-quota -n development
 
 **Output:**
 
-```
+```text
 Name:                   dev-quota
 Namespace:              development
 Resource                Used   Hard
