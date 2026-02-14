@@ -4,7 +4,7 @@
 
 EZ DevSecOps is deployed to GitHub Pages using GitHub Actions. The deployment is fully automated—pushing to the `main` branch triggers a build and deploy workflow that makes the site live in seconds.
 
-**Live URL:** https://ezdevsecops.github.io/ezdevsecops/
+**Live URL:** https://toanalien.github.io/ezdevsecops/
 
 ## Prerequisites
 
@@ -33,7 +33,7 @@ GitHub Pages Deployment
     └─ Serves via HTTPS CDN
     ↓
 Live Site Updated
-    └─ https://ezdevsecops.github.io/ezdevsecops/
+    └─ https://toanalien.github.io/ezdevsecops/
 ```
 
 ## Publishing a New Post
@@ -143,7 +143,7 @@ git push origin main
 1. Push commit to `main`
 2. Visit GitHub Actions tab: https://github.com/ezdevsecops/ezdevsecops/actions
 3. Watch workflow progress (~30 seconds total)
-4. Check live site after workflow completes: https://ezdevsecops.github.io/ezdevsecops/posts/doks-mastery/xx-post-name/
+4. Check live site after workflow completes: https://toanalien.github.io/ezdevsecops/posts/doks-mastery/xx-post-name/
 
 ## Local Testing
 
@@ -405,7 +405,7 @@ git push origin main
 1. Check workflow status at GitHub Actions
 2. Clear browser cache (Ctrl+Shift+Delete or Cmd+Shift+Delete)
 3. Wait 30 seconds and refresh (CDN delay)
-4. Check live URL: https://ezdevsecops.github.io/ezdevsecops/
+4. Check live URL: https://toanalien.github.io/ezdevsecops/
 
 ### Local Build Issues
 

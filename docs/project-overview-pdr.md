@@ -95,7 +95,7 @@ ezdevsecops/
 2. GitHub Actions workflow triggered
 3. Hugo (v0.146.0) builds with PaperMod theme → `/public`
 4. Build artifact uploaded to GitHub Pages storage
-5. Live site updated at `https://ezdevsecops.github.io/ezdevsecops/`
+5. Live site updated at `https://toanalien.github.io/ezdevsecops/`
 
 ## Success Metrics
 
@@ -119,7 +119,7 @@ ezdevsecops/
 ## Content Strategy
 
 ### Blog Organization
-- **Base URL:** `https://ezdevsecops.github.io/ezdevsecops/`
+- **Base URL:** `https://toanalien.github.io/ezdevsecops/`
 - **Posts URL:** `/posts/doks-mastery/XX-name/`
 - **Series Pages:** Automatic series index generation
 - **Tags:** kubernetes, digitalocean, doks, kubectl, etc.

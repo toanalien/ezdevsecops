@@ -52,7 +52,7 @@ ezdevsecops/
 
 ### Configuration
 - **hugo.toml** (81 lines)
-  - Base URL: `https://ezdevsecops.github.io/ezdevsecops/`
+  - Base URL: `https://toanalien.github.io/ezdevsecops/`
   - Theme: hugo-PaperMod
   - Language: Vietnamese (`vi`)
   - Taxonomies: categories, tags, series
@@ -135,7 +135,7 @@ ezdevsecops/
 5. Upload artifact to GitHub Pages
 
 ### Output
-- **Site URL:** `https://ezdevsecops.github.io/ezdevsecops/`
+- **Site URL:** `https://toanalien.github.io/ezdevsecops/`
 - **Build Time:** ~5 seconds
 - **Assets Generated:**
   - HTML pages

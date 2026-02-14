@@ -1430,4 +1430,4 @@ Cảm ơn bạn đã đồng hành cùng **DOKS Mastery Series**! Happy deployin
 
 **Bài tiếp theo**: Explore GitOps với Flux/ArgoCD (coming soon)
 
-**Previous**: [Phần 6: Monitoring & Logging với Prometheus Stack](/posts/doks-mastery/06-monitoring-logging/)
+**Previous**: [Phần 6: Troubleshooting & Performance]({{< relref "/posts/doks-mastery/06-troubleshooting-performance" >}})

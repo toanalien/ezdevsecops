@@ -7,7 +7,7 @@
 **Format & Structure**
 ```toml
 # Use TOML format (Hugo standard)
-baseURL = "https://ezdevsecops.github.io/ezdevsecops/"
+baseURL = "https://toanalien.github.io/ezdevsecops/"
 languageCode = "vi"
 title = "EZ DevSecOps"
 

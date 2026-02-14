@@ -22,7 +22,7 @@ Khác với Developer tập trung vào deploy ứng dụng, SysAdmin cần nắm
 - **Backup & Disaster Recovery**: Sao lưu dữ liệu, khôi phục khi có sự cố
 
 {{< callout type="info" >}}
-**Yêu cầu**: Đã hoàn thành [Phần 1: Hướng dẫn cho Developer](/posts/doks-mastery/01-developer-guide/) và có kiến thức cơ bản về Linux/CLI.
+**Yêu cầu**: Đã hoàn thành [Phần 1: Chuẩn bị Kubernetes trên DigitalOcean]({{< relref "/posts/doks-mastery/01-doks-preparation" >}}) và có kiến thức cơ bản về Linux/CLI.
 {{< /callout >}}
 
 ### Vai trò của SysAdmin trong Kubernetes
@@ -751,7 +751,7 @@ Sau khi đọc xong bài viết, bạn nên có khả năng:
 
 ### Bước tiếp theo
 
-🚀 **[Phần 3: Hướng dẫn cho DevOps Engineer](/posts/doks-mastery/03-devops-guide/)**
+🚀 **[Phần 3: Hướng dẫn cho DevOps Engineer]({{< relref "/posts/doks-mastery/03-devops-guide" >}})**
 
 Trong phần tiếp theo, chúng ta sẽ tìm hiểu:
 - CI/CD pipelines với GitHub Actions

@@ -57,7 +57,7 @@
 ┌─────────────────────────────────────────────────────────────────┐
 │           Live Website (GitHub Pages)                           │
 │                                                                 │
-│  URL: https://ezdevsecops.github.io/ezdevsecops/                │
+│  URL: https://toanalien.github.io/ezdevsecops/                │
 │  ├─ Posts with syntax highlighting                              │
 │  ├─ Mermaid diagrams (v11, browser-rendered)                    │
 │  ├─ Full-text search (Fuse.js)                                  │
@@ -209,7 +209,7 @@ GitHub Pages deployment artifact created
     ↓
 GitHub Pages receives artifact
     ↓
-Website live at https://ezdevsecops.github.io/ezdevsecops/
+Website live at https://toanalien.github.io/ezdevsecops/
 ```
 
 ### User Interaction Flow
@@ -240,7 +240,7 @@ User interacts:
 
 ### hugo.toml Structure
 ```toml
-baseURL = "https://ezdevsecops.github.io/ezdevsecops/"
+baseURL = "https://toanalien.github.io/ezdevsecops/"
 languageCode = "vi"
 title = "EZ DevSecOps"
 theme = "hugo-PaperMod"

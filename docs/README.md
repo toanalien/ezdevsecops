@@ -66,7 +66,7 @@ EZ DevSecOps Blog
 | **Content** | 7-part DOKS Mastery series on DigitalOcean Kubernetes |
 | **Hosting** | GitHub Pages (automated via GitHub Actions) |
 | **Build Time** | ~5 seconds |
-| **Live URL** | https://ezdevsecops.github.io/ezdevsecops/ |
+| **Live URL** | https://toanalien.github.io/ezdevsecops/ |
 | **CI/CD** | Automatic deployment on push to `main` |
 | **Interactive Features** | Mermaid diagrams, Fuse.js search, dark mode, callout boxes |
 
@@ -207,7 +207,7 @@ Push to main branch
     ↓
 GitHub Actions Builds & Deploys
     ↓
-Live at https://ezdevsecops.github.io/ezdevsecops/
+Live at https://toanalien.github.io/ezdevsecops/
 ```
 
 **Time to live:** ~30 seconds from push to deployment
