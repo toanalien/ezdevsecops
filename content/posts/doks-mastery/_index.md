@@ -13,3 +13,5 @@ Series **DOKS Mastery** bao gồm 7 phần hướng dẫn chi tiết về việc
 5. RBAC & Bảo mật (Native + OPA/Falco/Vault)
 6. Troubleshooting, Performance & Monitoring
 7. CI/CD Integration (OIDC + Token)
+
+{{< download-epub file="/downloads/doks-mastery.epub" chapters="7" >}}

@@ -1,0 +1,154 @@
+/* EPUB Stylesheet — EZ DevSecOps series */
+
+/* === Font Embedding === */
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/NotoSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/NotoSans-Bold.ttf');
+}
+
+/* === Base Typography === */
+body {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 1em;
+  line-height: 1.6;
+  color: #1a1a1a;
+}
+
+h1 {
+  font-size: 1.6em;
+  font-weight: 700;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  page-break-before: always;
+}
+
+h2 {
+  font-size: 1.3em;
+  font-weight: 700;
+  margin-top: 1.5em;
+  margin-bottom: 0.4em;
+}
+
+h3 {
+  font-size: 1.1em;
+  font-weight: 700;
+  margin-top: 1.2em;
+  margin-bottom: 0.3em;
+}
+
+p {
+  margin-bottom: 0.8em;
+  text-align: justify;
+}
+
+/* === Callout Blockquotes === */
+blockquote.callout {
+  border-left: 3px solid #3b82f6;
+  padding: 0.8em 1em;
+  margin: 1em 0;
+  background-color: #f0f7ff;
+}
+
+blockquote.callout-warning {
+  border-left-color: #f59e0b;
+  background-color: #fffbeb;
+}
+
+blockquote.callout-danger {
+  border-left-color: #ef4444;
+  background-color: #fef2f2;
+}
+
+blockquote.callout-tip {
+  border-left-color: #22c55e;
+  background-color: #f0fdf4;
+}
+
+blockquote.callout strong:first-child {
+  display: block;
+  margin-bottom: 0.3em;
+}
+
+/* === Code Blocks === */
+pre {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85em;
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 3px;
+  padding: 0.8em;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9em;
+}
+
+p code, li code {
+  background-color: #f0f0f0;
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+}
+
+/* === Tables === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 0.9em;
+}
+
+th, td {
+  border: 1px solid #d0d0d0;
+  padding: 0.5em 0.7em;
+  text-align: left;
+}
+
+th {
+  background-color: #f0f0f0;
+  font-weight: 700;
+}
+
+/* === Lists === */
+ul, ol {
+  margin-bottom: 0.8em;
+  padding-left: 1.5em;
+}
+
+li {
+  margin-bottom: 0.3em;
+}
+
+/* === Links === */
+a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+/* === Images === */
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 1em 0;
+}
+
+/* === TOC === */
+nav#toc ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+nav#toc li {
+  margin-bottom: 0.5em;
+}

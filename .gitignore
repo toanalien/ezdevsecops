@@ -79,3 +79,6 @@ ck.md
 public/
 resources/
 .hugo_build.lock
+
+# Generated EPUB files (built in CI)
+static/downloads/*.epub

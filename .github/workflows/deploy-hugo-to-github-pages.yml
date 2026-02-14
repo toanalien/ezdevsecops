@@ -29,6 +29,24 @@ jobs:
           hugo-version: "0.146.0"
           extended: true
 
+      - name: Install Pandoc
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq pandoc
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install mermaid-cli
+        run: npm install -g @mermaid-js/mermaid-cli
+
+      - name: Generate EPUB files
+        run: |
+          chmod +x scripts/generate-epub.sh
+          ./scripts/generate-epub.sh
+
       - name: Build
         run: hugo --minify
 

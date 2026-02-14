@@ -16,3 +16,5 @@ Series **ISO 27001 cho SME** gồm 10 phần hướng dẫn chi tiết việc tr
 8. Đánh giá nội bộ và Cải tiến liên tục
 9. Chuẩn bị đánh giá chứng nhận ISO 27001
 10. Tuân thủ pháp luật Việt Nam - Nghị định 13/2023 và Luật An ninh mạng
+
+{{< download-epub file="/downloads/iso27001-sme.epub" chapters="10" >}}
