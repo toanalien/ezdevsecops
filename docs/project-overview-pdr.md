@@ -4,11 +4,11 @@
 
 **EZ DevSecOps** is a educational blog platform built with Hugo that delivers comprehensive DevSecOps and Kubernetes tutorials in Vietnamese. The project focuses on making enterprise-grade Kubernetes (DigitalOcean Kubernetes - DOKS) accessible through practical, step-by-step guides.
 
-**Purpose:** Provide developers, sysadmins, and DevOps engineers with practical tutorials on Kubernetes security, CI/CD integration, and cloud operations on DigitalOcean.
+**Purpose:** Provide comprehensive tutorials on DevSecOps practices and information security management systems for enterprise professionals, covering Kubernetes deployment, CI/CD automation, and ISO 27001 ISMS implementation.
 
 **Launch Date:** February 2026
-**Status:** Active Development
-**Audience:** Vietnamese-speaking tech professionals
+**Status:** Active Development (Phase 2: Enterprise Security Expansion)
+**Audience:** Vietnamese-speaking DevOps engineers, system administrators, security professionals, and ISMS implementers
 
 ## Core Features
 
@@ -22,8 +22,20 @@
   6. Troubleshooting & Performance (diagnostics, optimization)
   7. CI/CD Integration (GitHub Actions, automation)
 
+- **10-part ISO 27001 SME Series** covering:
+  1. Introduction to ISO 27001 standards
+  2. ISMS scope and organizational context
+  3. Risk assessment methodologies
+  4. Statement of Applicability (SoA)
+  5. Information security policies and documentation
+  6. Control implementation and deployment
+  7. Personnel training and awareness programs
+  8. Internal audit procedures
+  9. Certification preparation
+  10. Vietnam-specific compliance requirements
+
 - **Series Organization:** Posts grouped thematically with automatic navigation
-- **Multi-language Support:** Vietnamese content with English variable names
+- **Multi-language Support:** Vietnamese content with English technical terms
 
 ### Technical Foundation
 - **Static Site Generator:** Hugo v0.146.0 (extended binary)
@@ -101,7 +113,9 @@ ezdevsecops/
 
 | Metric | Target | Status |
 |--------|--------|--------|
-| Content Series Complete | 7 parts | ✓ 7/7 |
+| DOKS Series Complete | 7 posts | ✓ 7/7 |
+| ISO 27001 Series Complete | 10 posts | ✓ 10/10 |
+| Total Content Posts | 17+ | ✓ 17/17 |
 | Build Time | <10 seconds | ✓ ~5s |
 | Mobile Responsive | 100% coverage | ✓ PaperMod |
 | Search Functional | All posts searchable | ✓ Fuse.js |
@@ -155,9 +169,12 @@ Each post includes:
 ## Acceptance Criteria
 
 - ✓ All 7 DOKS tutorial posts published
+- ✓ All 10 ISO 27001 SME tutorial posts published
 - ✓ Site builds successfully with Hugo v0.146.0
 - ✓ Automatic deployment via GitHub Pages working
 - ✓ Mermaid diagrams render correctly
-- ✓ Search functionality operational
+- ✓ Search functionality operational across both series
 - ✓ Mobile and dark mode responsive
-- ✓ Documentation complete
+- ✓ Documentation complete and up-to-date
+- ✓ Project changelog established
+- ✓ Development roadmap created

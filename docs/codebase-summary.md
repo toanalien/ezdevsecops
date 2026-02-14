@@ -11,15 +11,27 @@ ezdevsecops/
 ├── content/
 │   ├── posts/
 │   │   ├── _index.md           # Posts landing page
-│   │   └── doks-mastery/
-│   │       ├── _index.md       # DOKS Mastery series index
-│   │       ├── 01-doks-preparation/index.md
-│   │       ├── 02-sysadmin-guide/index.md
-│   │       ├── 03-devops-guide/index.md
-│   │       ├── 04-developer-guide/index.md
-│   │       ├── 05-rbac-security/index.md
-│   │       ├── 06-troubleshooting-performance/index.md
-│   │       └── 07-cicd-integration/index.md
+│   │   ├── doks-mastery/
+│   │   │   ├── _index.md       # DOKS Mastery series index
+│   │   │   ├── 01-doks-preparation/index.md
+│   │   │   ├── 02-sysadmin-guide/index.md
+│   │   │   ├── 03-devops-guide/index.md
+│   │   │   ├── 04-developer-guide/index.md
+│   │   │   ├── 05-rbac-security/index.md
+│   │   │   ├── 06-troubleshooting-performance/index.md
+│   │   │   └── 07-cicd-integration/index.md
+│   │   └── iso27001-sme/
+│   │       ├── _index.md       # ISO 27001 SME series index
+│   │       ├── 01-gioi-thieu-iso27001/index.md
+│   │       ├── 02-pham-vi-isms-boi-canh/index.md
+│   │       ├── 03-danh-gia-rui-ro/index.md
+│   │       ├── 04-tuyen-bo-ap-dung/index.md
+│   │       ├── 05-chinh-sach-tai-lieu/index.md
+│   │       ├── 06-trien-khai-kiem-soat/index.md
+│   │       ├── 07-dao-tao-nhan-su/index.md
+│   │       ├── 08-danh-gia-noi-bo/index.md
+│   │       ├── 09-chuan-bi-chung-nhan/index.md
+│   │       └── 10-tuan-thu-phap-luat-vn/index.md
 │
 ├── layouts/
 │   ├── partials/
@@ -65,6 +77,10 @@ ezdevsecops/
   - Frontmatter: title, date, categories, tags, series, weight, mermaid flag
   - Vietnamese titles and descriptions
   - Learning objectives, prerequisites, step-by-step guides
+- **10 ISO 27001 SME Tutorial Posts** (iso27001-sme series)
+  - Information Security Management System (ISMS) comprehensive guide
+  - Vietnamese language content targeting enterprise security professionals
+  - Series covers introduction through certification and Vietnam compliance
 
 ### Layout Components
 - **extend_head.html** (15 lines)
@@ -122,8 +138,11 @@ ezdevsecops/
 
 ### Series Organization
 - **DOKS Mastery:** 7-part series on DigitalOcean Kubernetes
-- **Weight:** Posts numbered 1-7 for ordering
-- **Metadata:** Category (Kubernetes), multiple tags
+  - Weight: Posts numbered 1-7 for ordering
+  - Metadata: Category (Kubernetes), multiple tags
+- **ISO 27001 SME:** 10-part series on Information Security Management Systems
+  - Weight: Posts numbered 1-10 for ordering
+  - Metadata: Category (Security), tags: iso27001, isms, compliance, security
 
 ## Build & Deployment
 
@@ -159,7 +178,7 @@ ezdevsecops/
 
 ## File Statistics
 
-- **Markdown Files:** 9 (1 index, 7 posts, 1 landing page)
+- **Markdown Files:** 20 (1 index, 7 DOKS posts, 10 ISO 27001 posts, 1 landing page, 1 DOKS index)
 - **HTML Templates:** 3 (extend_head, callout, mermaid)
 - **CSS:** 1 custom stylesheet
 - **Config:** 1 TOML file
