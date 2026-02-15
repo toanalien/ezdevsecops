@@ -9,7 +9,18 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 OUTPUT_DIR="$ROOT_DIR/static/downloads"
 EPUB_ASSETS="$ROOT_DIR/assets/epub"
+PUPPETEER_CONFIG="$EPUB_ASSETS/puppeteer-config.json"
 TMP_DIR=""
+
+# Ensure Chrome shared libs are discoverable for mmdc (e.g. libnss3.so)
+# CI (ubuntu-latest) has these system-wide; local dev may need bundled browser libs
+if command -v mmdc &>/dev/null && ! ldconfig -p 2>/dev/null | grep -q libnss3; then
+  _nss_lib=$(find "${HOME}/.cache" /config/.cache 2>/dev/null -name "libnss3.so" -print -quit 2>/dev/null || true)
+  if [[ -n "${_nss_lib:-}" ]]; then
+    export LD_LIBRARY_PATH="$(dirname "$_nss_lib"):${LD_LIBRARY_PATH:-}"
+  fi
+  unset _nss_lib
+fi
 
 # Series slug → content directory mapping (hardcoded, KISS)
 declare -A SERIES_MAP=(
@@ -73,12 +84,17 @@ convert_callouts() {
 }
 
 # Convert mermaid shortcodes to SVG images (if mmdc available) or placeholder text
+# Uses a counter file in tmp_dir to maintain global numbering across posts
 convert_mermaid() {
   local tmp_dir="$1"
-  local diagram_counter=0
+  local counter_file="$tmp_dir/mermaid-counter"
+  # Initialize counter file if not exists
+  [[ -f "$counter_file" ]] || echo "0" > "$counter_file"
+  local start_count
+  start_count=$(cat "$counter_file")
 
-  awk -v tmp_dir="$tmp_dir" '
-    BEGIN { in_mermaid=0; counter=0 }
+  awk -v tmp_dir="$tmp_dir" -v start="$start_count" '
+    BEGIN { in_mermaid=0; counter=start }
     /\{\{<[[:space:]]*mermaid[[:space:]]*>\}\}/ {
       in_mermaid=1
       counter++
@@ -101,6 +117,7 @@ convert_mermaid() {
       next
     }
     { print }
+    END { print counter > (tmp_dir "/mermaid-counter") }
   '
 }
 
@@ -124,10 +141,26 @@ render_mermaid_svgs() {
     local placeholder="%%MERMAID_PLACEHOLDER_${num}%%"
 
     if $has_mmdc; then
+      # Build mmdc args with puppeteer config if available
+      local mmdc_args=(-i "$mmd_file" -o "$svg_file" -t neutral -b transparent)
+      [[ -f "$PUPPETEER_CONFIG" ]] && mmdc_args+=(-p "$PUPPETEER_CONFIG")
+
       # Render SVG via mermaid-cli
-      if mmdc -i "$mmd_file" -o "$svg_file" -t neutral -b transparent --quiet 2>/dev/null; then
-        # Replace placeholder with img tag referencing the SVG
-        sed -i "s|${placeholder}|<img src=\"diagram-${num}.svg\" alt=\"Biểu đồ ${num}\" />|" "$combined_file"
+      if mmdc "${mmdc_args[@]}" 2>/dev/null; then
+        echo "    Rendered diagram-${num}.svg"
+        # Inline the SVG content directly into the markdown for reliable EPUB embedding
+        local svg_content
+        svg_content=$(cat "$svg_file")
+        # Use a temp file for replacement since SVG content is multiline
+        awk -v placeholder="$placeholder" -v svgfile="$svg_file" '
+          $0 == placeholder {
+            while ((getline line < svgfile) > 0) print line
+            close(svgfile)
+            next
+          }
+          { print }
+        ' "$combined_file" > "${combined_file}.tmp"
+        mv "${combined_file}.tmp" "$combined_file"
       else
         echo "  Warning: mmdc failed for diagram-${num}, using placeholder" >&2
         sed -i "s|${placeholder}|> *[Biểu đồ ${num} - xem trên website]*|" "$combined_file"
