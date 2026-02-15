@@ -2,6 +2,32 @@
 
 All notable changes to the EZ DevSecOps project are documented here.
 
+## [2026-02-15] - OpenClaw Personal Assistant Series Launch
+
+### Added
+- **OpenClaw Personal Assistant Tutorial Series** (6 comprehensive blog posts)
+  - 01: Chuẩn bị hạ tầng VPS - VPS Infrastructure Preparation with Security Hardening
+  - 02: Cài đặt và cấu hình OpenClaw - Installation and Configuration with Ollama LLM
+  - 03: Tích hợp kênh nhắn tin - Messaging Channel Integration (Telegram, Discord, WhatsApp)
+  - 04: Tăng cường bảo mật - Security Hardening with Authentication and Rate Limiting
+  - 05: Kỹ năng và tùy chỉnh - Skills Customization and Workflow Automation
+  - 06: Vận hành và bảo trì - Operations and Maintenance (Monitoring, Backup, Troubleshooting)
+
+### Features
+- Vietnamese language content for AI assistant deployment
+- Self-hosted OpenClaw framework configuration
+- Ollama local LLM integration with cloud API fallback
+- Messaging platform integration (Telegram, Discord, WhatsApp)
+- Security best practices and hardening techniques
+- Custom skills and workflow automation patterns
+
+### Impact
+- Content portfolio expanded from 2 series (17 posts) to 3 series (23 posts total)
+- New audience segment: AI practitioners and automation engineers
+- Broadens platform scope to include AI assistant deployment
+
+---
+
 ## [2026-02-14] - EPUB Series Download Feature Launch
 
 ### Added

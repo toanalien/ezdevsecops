@@ -20,18 +20,26 @@ ezdevsecops/
 │   │   │   ├── 05-rbac-security/index.md
 │   │   │   ├── 06-troubleshooting-performance/index.md
 │   │   │   └── 07-cicd-integration/index.md
-│   │   └── iso27001-sme/
-│   │       ├── _index.md       # ISO 27001 SME series index
-│   │       ├── 01-gioi-thieu-iso27001/index.md
-│   │       ├── 02-pham-vi-isms-boi-canh/index.md
-│   │       ├── 03-danh-gia-rui-ro/index.md
-│   │       ├── 04-tuyen-bo-ap-dung/index.md
-│   │       ├── 05-chinh-sach-tai-lieu/index.md
-│   │       ├── 06-trien-khai-kiem-soat/index.md
-│   │       ├── 07-dao-tao-nhan-su/index.md
-│   │       ├── 08-danh-gia-noi-bo/index.md
-│   │       ├── 09-chuan-bi-chung-nhan/index.md
-│   │       └── 10-tuan-thu-phap-luat-vn/index.md
+│   │   ├── iso27001-sme/
+│   │   │   ├── _index.md       # ISO 27001 SME series index
+│   │   │   ├── 01-gioi-thieu-iso27001/index.md
+│   │   │   ├── 02-pham-vi-isms-boi-canh/index.md
+│   │   │   ├── 03-danh-gia-rui-ro/index.md
+│   │   │   ├── 04-tuyen-bo-ap-dung/index.md
+│   │   │   ├── 05-chinh-sach-tai-lieu/index.md
+│   │   │   ├── 06-trien-khai-kiem-soat/index.md
+│   │   │   ├── 07-dao-tao-nhan-su/index.md
+│   │   │   ├── 08-danh-gia-noi-bo/index.md
+│   │   │   ├── 09-chuan-bi-chung-nhan/index.md
+│   │   │   └── 10-tuan-thu-phap-luat-vn/index.md
+│   │   └── openclaw-personal-assistant/
+│   │       ├── _index.md       # OpenClaw Personal Assistant series index
+│   │       ├── 01-infrastructure-preparation/index.md
+│   │       ├── 02-installation-configuration/index.md
+│   │       ├── 03-messaging-channel-integration/index.md
+│   │       ├── 04-security-hardening/index.md
+│   │       ├── 05-skills-customization/index.md
+│   │       └── 06-operations-maintenance/index.md
 │
 ├── layouts/
 │   ├── partials/
@@ -91,6 +99,10 @@ ezdevsecops/
   - Information Security Management System (ISMS) comprehensive guide
   - Vietnamese language content targeting enterprise security professionals
   - Series covers introduction through certification and Vietnam compliance
+- **6 OpenClaw Personal Assistant Tutorial Posts** (openclaw-personal-assistant series)
+  - Self-hosted AI assistant deployment guide using OpenClaw framework
+  - Vietnamese language content targeting AI practitioners and automation engineers
+  - Series covers infrastructure, installation, integration, security, customization, and operations
 
 ### Layout Components
 - **extend_head.html** (15 lines)
@@ -197,7 +209,7 @@ ezdevsecops/
 
 ## File Statistics
 
-- **Markdown Files:** 20 (1 index, 7 DOKS posts, 10 ISO 27001 posts, 1 landing page, 1 DOKS index)
+- **Markdown Files:** 26 (1 index, 7 DOKS posts, 10 ISO 27001 posts, 6 OpenClaw posts, 1 landing page, 1 DOKS index, 1 OpenClaw index)
 - **HTML Templates:** 3 (extend_head, callout, mermaid)
 - **CSS:** 1 custom stylesheet
 - **Config:** 1 TOML file
