@@ -2,6 +2,42 @@
 
 All notable changes to the EZ DevSecOps project are documented here.
 
+## [2026-02-14] - EPUB Series Download Feature Launch
+
+### Added
+- **EPUB Generation System** for blog series (Pandoc + mermaid-cli integration)
+  - `scripts/generate-epub.sh` - Build script for batch EPUB generation
+  - `assets/epub/metadata/{series}.yaml` - EPUB metadata files (doks-mastery, iso27001-sme)
+  - `assets/epub/epub-styles.css` - Embedded styling for EPUB files
+  - `assets/epub/fonts/` - Custom font embedding support
+  - `layouts/shortcodes/download-epub.html` - UI shortcode for download buttons
+
+- **CI/CD EPUB Integration** (.github/workflows/deploy-hugo-to-github-pages.yml)
+  - Pre-build EPUB generation (runs before Hugo build)
+  - Pandoc + mermaid-cli installation in GitHub Actions
+  - SVG diagram rendering for offline reading
+  - Callout shortcode → HTML blockquote conversion
+
+- **Features**
+  - Readers can download full series as EPUB files
+  - Mermaid diagrams converted to SVG for offline viewing
+  - Customizable callout styling in EPUB output
+  - Vietnamese language metadata and labels
+  - Download buttons on series index pages
+
+### Changed
+- Updated `docs/codebase-summary.md` with EPUB asset structure and scripts
+- Updated `docs/system-architecture.md` with EPUB generation pipeline details
+- Enhanced CI/CD workflow to support offline reading formats
+
+### Impact
+- Series now available in portable EPUB format (7 DOKS posts + 10 ISO 27001 posts)
+- Readers can download and read offline on e-readers and mobile devices
+- Mermaid diagrams embedded as SVG images in EPUB files
+- Reduced dependency on web browser for full content access
+
+---
+
 ## [2026-02-14] - ISO 27001 SME Series Launch
 
 ### Added
@@ -93,5 +129,6 @@ All notable changes to the EZ DevSecOps project are documented here.
 
 | Version | Date | Status | Major Features |
 |---------|------|--------|----------------|
+| 2.1 | 2026-02-14 | Active | EPUB download feature (offline reading) |
 | 2.0 | 2026-02-14 | Active | ISO 27001 SME series (10 posts) |
 | 1.0 | 2026-02-01 | Active | DOKS Mastery series (7 posts) + infrastructure |

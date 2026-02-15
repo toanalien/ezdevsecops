@@ -38,11 +38,18 @@ ezdevsecops/
 │   │   └── extend_head.html     # Custom CSS + Mermaid loader
 │   └── shortcodes/
 │       ├── callout.html         # Callout box shortcode
-│       └── mermaid.html         # Mermaid diagram shortcode
+│       ├── mermaid.html         # Mermaid diagram shortcode
+│       └── download-epub.html    # EPUB download button shortcode
 │
 ├── assets/
-│   └── css/
-│       └── custom-styles.css    # Custom styles (callouts, code blocks)
+│   ├── css/
+│   │   └── custom-styles.css    # Custom styles (callouts, code blocks)
+│   └── epub/                     # EPUB generation assets
+│       ├── metadata/
+│       │   ├── doks-mastery.yaml     # EPUB metadata for DOKS series
+│       │   └── iso27001-sme.yaml     # EPUB metadata for ISO 27001 series
+│       ├── epub-styles.css       # Embedded CSS for EPUB files
+│       └── fonts/                # Custom fonts for EPUB embedding
 │
 ├── themes/
 │   └── hugo-PaperMod/           # PaperMod theme (submodule)
@@ -54,6 +61,9 @@ ezdevsecops/
 ├── .github/
 │   └── workflows/
 │       └── deploy-hugo-to-github-pages.yml  # CI/CD deployment
+│
+├── scripts/
+│   └── generate-epub.sh         # EPUB generation script (Pandoc + Mermaid CLI)
 │
 ├── CLAUDE.md                    # Claude Code instructions
 ├── AGENTS.md                    # Agent documentation
@@ -97,6 +107,11 @@ ezdevsecops/
   - Shortcode: `{{< mermaid >}}...{{< /mermaid >}}`
   - Wraps content in div with mermaid class for rendering
 
+- **download-epub.html** (22 lines)
+  - Shortcode: `{{< download-epub file="/downloads/series-name.epub" chapters="7" label="Download" >}}`
+  - Renders styled download button with icon and chapter count
+  - Parameters: `file` (EPUB path), `chapters` (number), `label` (button text, Vietnamese default)
+
 ### Styling
 - **custom-styles.css** (50+ lines)
   - Callout boxes: 4 color schemes (blue, green, orange, red)
@@ -104,12 +119,14 @@ ezdevsecops/
   - Code blocks: max-height 600px with overflow
   - Print styles: hide navigation, footer, etc.
 
-### Deployment
-- **deploy-hugo-to-github-pages.yml** (47 lines)
+### Deployment & EPUB Generation
+- **deploy-hugo-to-github-pages.yml** (68 lines)
   - Trigger: Push to `main` branch or manual `workflow_dispatch`
   - Hugo v0.146.0 extended binary
+  - **EPUB Generation:** Pandoc + Mermaid CLI installed, `scripts/generate-epub.sh` runs before Hugo build
   - Build: `hugo --minify`
   - Deploy: Upload artifact to GitHub Pages
+  - Output includes EPUB files in `/public/downloads/`
 
 ## Technology Stack
 
@@ -118,6 +135,8 @@ ezdevsecops/
 | Hugo | 0.146.0 (extended) | Static site generator |
 | PaperMod | Latest (submodule) | Responsive theme |
 | Mermaid | v11 (CDN ESM) | Diagram rendering |
+| Mermaid CLI | Latest (Node.js) | Diagram → SVG conversion for EPUB |
+| Pandoc | Latest | Markdown → EPUB conversion |
 | Fuse.js | Built-in (PaperMod) | Full-text search |
 | GitHub Actions | Latest | CI/CD automation |
 

@@ -137,30 +137,55 @@ shortcodes/mermaid.html
 
 ### 4. Build & Deployment Layer
 
+**EPUB Generation Process (Pre-Build)**
+```
+Input:
+├─ content/posts/{series}/ (Markdown per series)
+├─ assets/epub/metadata/{series}.yaml (EPUB metadata)
+├─ assets/epub/epub-styles.css (Embedded CSS)
+└─ assets/epub/fonts/ (Custom fonts)
+         ↓
+    generate-epub.sh Script
+    ├─ For each series:
+    │  ├─ Collect posts in weight order (01-*, 02-*, etc.)
+    │  ├─ Extract titles from YAML frontmatter
+    │  ├─ Strip frontmatter from content
+    │  ├─ Convert callout shortcodes → HTML blockquotes
+    │  ├─ Extract mermaid diagrams → .mmd files
+    │  ├─ Render .mmd → SVG via mermaid-cli
+    │  ├─ Replace diagram placeholders with <img> tags
+    │  └─ Combine into single Markdown file
+    ├─ Run: pandoc with metadata + CSS + fonts
+    └─ Output: static/downloads/{series}.epub
+```
+
 **Hugo Build Process**
 ```
 Input:
 ├─ content/ (Markdown)
-├─ layouts/ (Templates)
+├─ layouts/ (Templates, incl. download-epub shortcode)
 ├─ assets/ (CSS)
+├─ static/downloads/ (Generated EPUB files)
 ├─ themes/hugo-PaperMod/ (Theme)
 └─ hugo.toml (Config)
          ↓
     Hugo Engine
     ├─ Parse config (TOML)
     ├─ Process content (Markdown → HTML)
-    ├─ Render templates
+    ├─ Render templates with download shortcodes
     ├─ Minify assets
     ├─ Generate taxonomies (tags, series)
-    └─ Create search index (JSON)
+    ├─ Create search index (JSON)
+    └─ Copy static/ → /downloads/
          ↓
 Output: /public/
 ├─ /index.html (home)
-├─ /posts/ (post pages)
+├─ /posts/ (post pages with EPUB download buttons)
 ├─ /posts/doks-mastery/ (series pages)
 ├─ /tags/ (tag index)
 ├─ /series/ (series index)
 ├─ /search/ (search page)
+├─ /downloads/*.epub (EPUB files)
 ├─ /index.json (search data)
 ├─ /feed.xml (RSS)
 ├─ /sitemap.xml
@@ -174,16 +199,22 @@ Git Push to main
 GitHub Actions Workflow Triggered
     ├─ Checkout code + submodules
     ├─ Install Hugo v0.146.0 extended
+    ├─ Install Pandoc + mermaid-cli
+    ├─ Generate EPUB files
+    │  ├─ Collect posts by series (weighted order)
+    │  ├─ Convert Hugo shortcodes → HTML (callouts, mermaid→SVG)
+    │  ├─ Render diagrams to SVG via mermaid-cli
+    │  └─ Output: static/downloads/*.epub
     ├─ Run: hugo --minify
-    ├─ Create artifact from /public/
+    ├─ Create artifact from /public/ (includes EPUB downloads)
     └─ Deploy to GitHub Pages
     ↓
 GitHub Pages Updates
-    ├─ Receives artifact
+    ├─ Receives artifact with EPUB files
     ├─ Updates gh-pages branch
     └─ Serves via HTTPS CDN
     ↓
-Live Website Updated
+Live Website Updated (with EPUB downloads available)
 ```
 
 ## Data Flow
